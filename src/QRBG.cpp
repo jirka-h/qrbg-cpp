@@ -699,7 +699,7 @@ size_t QRBG::getDoubles(double* buffer, size_t count) throw(ConnectError, Commun
   data_t* data = new data_t[count];
   //uint8 (*data)[7] = new uint8[count][7];
 
-  size_t acquired = AcquireBytes((byte*)data, 3*count) / 3;
+  size_t acquired = AcquireBytes((byte*)data, 7*count) / 7;
   size_t idx;
   for (idx = 0; idx < acquired; ++idx) {
     buffer[idx] = toDouble(&data[idx]);
